@@ -8,5 +8,17 @@ using SistemaControlCamaronera.Entidades; // importo la clase abstracta LoteCama
 namespace SistemaControlCamaronera.Controladores {
     public class TListaLote {
         public static List<LoteCamaron> listaLotes = new List<LoteCamaron>();
+
+        public static int VerificarLote(string codigo, int pos) {
+            
+            for (int i = 0; i < listaLotes.Count; i++) {
+                if(i != pos && listaLotes[i].CodigoLote.Equals(codigo, StringComparison.OrdinalIgnoreCase)) {
+                    return i; // si encuentra duplicado, retorna la posición 
+                }
+            }
+
+            return -1; // si no encuentra duplicado, retorna -1
+            
+        }
     }
 }
