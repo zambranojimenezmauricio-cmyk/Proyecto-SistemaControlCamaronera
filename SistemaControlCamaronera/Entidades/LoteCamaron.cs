@@ -49,7 +49,7 @@ namespace SistemaControlCamaronera.Entidades {
 
         public virtual String Imprimir() {
             return $"Codigo Lote: {CodigoLote} {Environment.NewLine} " +
-                $"Psicina: {Piscina} {Environment.NewLine} " +
+                $"Piscina: {Piscina} {Environment.NewLine} " +
                 $"Peso (libras): {PesoLibras} {Environment.NewLine} " +
                 $"Gramaje Promedio: {GramajePromedio} {Environment.NewLine} " +
                 $"Precio Base: {PrecioBase} {Environment.NewLine} " +

@@ -12,13 +12,20 @@ namespace SistemaControlCamaronera.Entidades {
             this.factorRendimiento = factorRendimiento;
         }
 
+        public double FactorRendimiento { 
+            get => factorRendimiento; 
+            set => factorRendimiento = value;
+        }
+
         //Se calcula el peso neto útil de colas eliminando el cefalotórax.
         //La libra útil recibe un sobreprecio compensatorio del 30 % sobre el precio base:
 
-        public override decimal CalcularLiquidacion() {
-            double librasCola = PesoLibras * factorRendimiento;
-            double precioCola = (double)PrecioBase * 1.30; // sobreprecio del 30%
-            return ((decimal) librasCola * (decimal) (precioCola)) + BonoGramaje();
+        public override decimal CalcularLiquidacion {
+            get {
+                double librasCola = PesoLibras * factorRendimiento;
+                double precioCola = (double)PrecioBase * 1.30; // sobreprecio del 30%
+                return ((decimal)librasCola * (decimal)(precioCola)) + BonoGramaje();
+            }
         }
 
         public override string Imprimir() {
