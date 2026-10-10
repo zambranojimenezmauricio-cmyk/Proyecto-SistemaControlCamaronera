@@ -21,6 +21,8 @@ namespace SistemaControlCamaronera.Controladores {
             
         }
 
+        //  Operaciones CRUD
+
         public static void Insertar(LoteCamaron lote) {
             listaLotes.Add(lote);
         }
@@ -31,6 +33,35 @@ namespace SistemaControlCamaronera.Controladores {
 
         public static void Eliminar(int pos) {
             listaLotes.RemoveAt(pos);
+        }
+
+        // Consultas Analiticas
+
+        public static decimal RecaudacionTotal() {
+            decimal sum  = listaLotes.Sum(lote => lote.CalcularLiquidacion); // almacena la suma de todas las liquidaciones
+            return sum;
+        }
+
+        // Consulta sin LINQ
+
+        public static decimal RecaudacionPorTipo(string tipo) {
+            decimal sum = 0.0m;
+
+            foreach(LoteCamaron l in listaLotes) {
+                if(l.Tipo.Equals(tipo, StringComparison.OrdinalIgnoreCase)) {
+                    sum = sum + l.CalcularLiquidacion;
+                }
+            }
+
+            return sum;
+        }
+
+        // Consulta con LINQ
+        public static decimal RecaudacionPorTipoL(string tipo) {
+
+            var consulta = listaLotes.Where(l => l.Tipo.Equals(tipo, StringComparison.OrdinalIgnoreCase)).Sum(l => l.CalcularLiquidacion);
+
+            return consulta;
         }
     }
 }
