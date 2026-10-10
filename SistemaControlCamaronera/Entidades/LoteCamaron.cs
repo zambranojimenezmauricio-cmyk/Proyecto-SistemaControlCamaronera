@@ -33,8 +33,9 @@ namespace SistemaControlCamaronera.Entidades {
         public decimal PrecioBase { get => precioBase; set => precioBase = value; }
         public string Tipo { get => tipo; set => tipo = value; }
 
+        // creamos el metodo abstracto y su getter
+        public abstract Decimal CalcularLiquidacion { get; }  
 
-        public abstract Decimal CalcularLiquidacion();
 
         public decimal BonoGramaje() {
 
