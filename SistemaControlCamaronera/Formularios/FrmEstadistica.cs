@@ -12,6 +12,11 @@ namespace SistemaControlCamaronera.Formularios {
     public partial class FrmEstadistica : Form {
         public FrmEstadistica() {
             InitializeComponent();
+            CenterToScreen();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e) {
+
         }
     }
 }
