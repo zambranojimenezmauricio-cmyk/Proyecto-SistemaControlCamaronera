@@ -15,7 +15,7 @@ namespace SistemaControlCamaronera.Entidades {
 
         public double DefectoCabeza { get => defectoCabeza; set => defectoCabeza = value; }
 
-        
+        //Se calcula el precio de liquidación considerando el defecto de cabeza.
 
         public override decimal CalcularLiquidacion {
             get {
