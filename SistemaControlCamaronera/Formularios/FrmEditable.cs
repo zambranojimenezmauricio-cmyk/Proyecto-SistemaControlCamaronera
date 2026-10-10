@@ -12,6 +12,32 @@ namespace SistemaControlCamaronera.Formularios {
     public partial class FrmEditable : Form {
         public FrmEditable() {
             InitializeComponent();
+            CenterToScreen();
+
+        }
+
+        private void lblPiscina_Click(object sender, EventArgs e) {
+
+        }
+
+        private void txtPiscina_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e) {
+
+        }
+
+        private void txtGramajePromedio_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        private void lblTipo1_Click(object sender, EventArgs e) {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e) {
+
         }
     }
 }

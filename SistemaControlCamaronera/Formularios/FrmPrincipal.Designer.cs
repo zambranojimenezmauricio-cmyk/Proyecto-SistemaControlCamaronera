@@ -205,7 +205,7 @@
             this.txtInfoLote.Location = new System.Drawing.Point(905, 492);
             this.txtInfoLote.Multiline = true;
             this.txtInfoLote.Name = "txtInfoLote";
-            this.txtInfoLote.Size = new System.Drawing.Size(523, 240);
+            this.txtInfoLote.Size = new System.Drawing.Size(523, 267);
             this.txtInfoLote.TabIndex = 17;
             // 
             // FrmPrincipal
