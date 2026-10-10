@@ -42,7 +42,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtBonoEstado = new System.Windows.Forms.TextBox();
             this.txtPenalizacion = new System.Windows.Forms.TextBox();
-            this.txtPrevisualizacion = new System.Windows.Forms.TextBox();
+            this.txtPrevisualizacionTotal = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.gpTipo = new System.Windows.Forms.GroupBox();
             this.lblParametro1 = new System.Windows.Forms.Label();
@@ -235,13 +235,13 @@
             this.txtPenalizacion.Size = new System.Drawing.Size(246, 32);
             this.txtPenalizacion.TabIndex = 33;
             // 
-            // txtPrevisualizacion
+            // txtPrevisualizacionTotal
             // 
-            this.txtPrevisualizacion.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13.74545F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrevisualizacion.Location = new System.Drawing.Point(502, 520);
-            this.txtPrevisualizacion.Name = "txtPrevisualizacion";
-            this.txtPrevisualizacion.Size = new System.Drawing.Size(246, 32);
-            this.txtPrevisualizacion.TabIndex = 35;
+            this.txtPrevisualizacionTotal.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13.74545F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrevisualizacionTotal.Location = new System.Drawing.Point(502, 520);
+            this.txtPrevisualizacionTotal.Name = "txtPrevisualizacionTotal";
+            this.txtPrevisualizacionTotal.Size = new System.Drawing.Size(246, 32);
+            this.txtPrevisualizacionTotal.TabIndex = 35;
             // 
             // label10
             // 
@@ -342,7 +342,7 @@
             this.Controls.Add(this.btnAgregarLote);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.gpTipo);
-            this.Controls.Add(this.txtPrevisualizacion);
+            this.Controls.Add(this.txtPrevisualizacionTotal);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtPenalizacion);
             this.Controls.Add(this.txtBonoEstado);
@@ -393,7 +393,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtBonoEstado;
         private System.Windows.Forms.TextBox txtPenalizacion;
-        private System.Windows.Forms.TextBox txtPrevisualizacion;
+        private System.Windows.Forms.TextBox txtPrevisualizacionTotal;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox gpTipo;
         private System.Windows.Forms.Label lblParametro2;

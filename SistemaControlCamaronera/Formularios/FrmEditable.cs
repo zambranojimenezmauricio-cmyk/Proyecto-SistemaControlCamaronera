@@ -13,6 +13,14 @@ namespace SistemaControlCamaronera.Formularios {
         public FrmEditable() {
             InitializeComponent();
             CenterToScreen();
+            cboTipos.DropDownStyle = ComboBoxStyle.DropDownList; // evita escribir dentro del comoBox
+            txtBonoEstado.ReadOnly = true;
+            txtPenalizacion.ReadOnly = true;
+            txtPrevisualizacionTotal.ReadOnly = true;
+
+            txtBonoEstado.BackColor = Color.White;
+            txtPenalizacion.BackColor = Color.White;
+            txtPrevisualizacionTotal.BackColor = Color.White;
 
         }
 
