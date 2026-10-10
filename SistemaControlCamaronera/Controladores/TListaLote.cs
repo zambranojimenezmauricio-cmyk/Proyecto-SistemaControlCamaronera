@@ -20,5 +20,17 @@ namespace SistemaControlCamaronera.Controladores {
             return -1; // si no encuentra duplicado, retorna -1
             
         }
+
+        public static void Insertar(LoteCamaron lote) {
+            listaLotes.Add(lote);
+        }
+
+        public static void Modificar(int pos, LoteCamaron lote) {
+            listaLotes[pos] = lote; // remplaza el lote en la posicion especifica
+        }
+
+        public static void Eliminar(int pos) {
+            listaLotes.RemoveAt(pos);
+        }
     }
 }
