@@ -15,9 +15,12 @@ namespace SistemaControlCamaronera.Entidades {
 
         public string CodigoCertificado { get => codigoCertificado; set => codigoCertificado = value; }
 
-        public override decimal CalcularLiquidacion() {
-            decimal subtotalBase = (decimal)base.CalcularLiquidacion();
-            return subtotalBase + (subtotalBase * 0.15m);
+        public override decimal CalcularLiquidacion {
+            get {
+                decimal subtotalBase = (decimal)base.CalcularLiquidacion;
+                return subtotalBase + (subtotalBase * 0.15m);
+
+            }
         }
 
         public override string Imprimir() {
