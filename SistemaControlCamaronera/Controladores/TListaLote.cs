@@ -57,11 +57,19 @@ namespace SistemaControlCamaronera.Controladores {
         }
 
         // Consulta con LINQ
-        public static decimal RecaudacionPorTipoL(string tipo) {
+        public static decimal RecaudacionPorTipoLINQ(string tipo) {
 
             var consulta = listaLotes.Where(l => l.Tipo.Equals(tipo, StringComparison.OrdinalIgnoreCase)).Sum(l => l.CalcularLiquidacion);
 
             return consulta;
+        }
+
+        public  static decimal RecaudacionPorTipoL(string tipo) {
+            var consulta = from l in listaLotes
+                           where l.Tipo.Equals(tipo, StringComparison.OrdinalIgnoreCase)
+                           select l.CalcularLiquidacion;
+
+            return consulta.Sum();
         }
     }
 }
