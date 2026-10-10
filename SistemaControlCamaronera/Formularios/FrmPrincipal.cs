@@ -15,6 +15,7 @@ namespace SistemaControlCamaronera {
             CenterToScreen();
             configurarTabla();
             borde.Width = 1400;
+            cboTipos.DropDownStyle = ComboBoxStyle.DropDownList; // evita escribir dentro del comoBox
         }
 
 
