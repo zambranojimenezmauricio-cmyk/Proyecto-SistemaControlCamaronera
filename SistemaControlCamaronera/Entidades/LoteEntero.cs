@@ -17,22 +17,24 @@ namespace SistemaControlCamaronera.Entidades {
 
         
 
-        public override decimal CalcularLiquidacion() {
-            
-            //Si DefectoCabeza ≤ 3.0%, no se aplica castigo(tolerancia comercial).
-            //Si DefectoCabeza > 3.0%, cada punto porcentual excedente penaliza un 5% directo sobre el precio base por libra
+        public override decimal CalcularLiquidacion {
+            get {
 
-            if (DefectoCabeza > 3.0) {
-                double Exceso = DefectoCabeza - 3.0;
-                double Penalizacion = Exceso * 0.05 * (double)(PrecioBase);
-                double precioAjustado = Math.Max(0, (double)PrecioBase - (double)(Penalizacion));
+                //Si DefectoCabeza ≤ 3.0%, no se aplica castigo(tolerancia comercial).
+                //Si DefectoCabeza > 3.0%, cada punto porcentual excedente penaliza un 5% directo sobre el precio base por libra
 
-                return ((decimal)PesoLibras * (decimal)(precioAjustado)) + (BonoGramaje());
+                if (DefectoCabeza > 3.0) {
+                    double Exceso = DefectoCabeza - 3.0;
+                    double Penalizacion = Exceso * 0.05 * (double)(PrecioBase);
+                    double precioAjustado = Math.Max(0, (double)PrecioBase - (double)(Penalizacion));
+
+                    return ((decimal)PesoLibras * (decimal)(precioAjustado)) + (BonoGramaje());
+                }
+
+                return ((decimal)PesoLibras * PrecioBase) + (BonoGramaje());
+
+
             }
-
-            return ((decimal)PesoLibras * PrecioBase) + (BonoGramaje());
-           
-            
         }
 
         public override string Imprimir() {

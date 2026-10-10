@@ -17,9 +17,11 @@ namespace SistemaControlCamaronera.Entidades {
             set => tarifaProceso = value; 
         }
 
-        public override decimal CalcularLiquidacion() {
-            double costoProcesado = PesoLibras * (tarifaProceso / 100);
-            return ((decimal)PesoLibras * (decimal)PrecioBase) + (decimal)costoProcesado + BonoGramaje();
+        public override decimal CalcularLiquidacion {
+            get {
+                double costoProcesado = PesoLibras * (tarifaProceso / 100);
+                return ((decimal)PesoLibras * (decimal)PrecioBase) + (decimal)costoProcesado + BonoGramaje();
+            }
         }
 
         public override string Imprimir() {
