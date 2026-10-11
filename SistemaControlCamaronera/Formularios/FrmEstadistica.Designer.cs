@@ -38,7 +38,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtTotalConsulta = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFacturacionTotal = new System.Windows.Forms.TextBox();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -201,13 +201,13 @@
             this.label7.TabIndex = 51;
             this.label7.Text = "Facturacion Total:";
             // 
-            // textBox1
+            // txtFacturacionTotal
             // 
-            this.textBox1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(63, 339);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(223, 28);
-            this.textBox1.TabIndex = 50;
+            this.txtFacturacionTotal.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFacturacionTotal.Location = new System.Drawing.Point(63, 339);
+            this.txtFacturacionTotal.Name = "txtFacturacionTotal";
+            this.txtFacturacionTotal.Size = new System.Drawing.Size(223, 28);
+            this.txtFacturacionTotal.TabIndex = 50;
             // 
             // btnRegresar
             // 
@@ -283,7 +283,7 @@
             this.gbResumenGlobal.Controls.Add(this.txtMejorLote);
             this.gbResumenGlobal.Controls.Add(this.label8);
             this.gbResumenGlobal.Controls.Add(this.label7);
-            this.gbResumenGlobal.Controls.Add(this.textBox1);
+            this.gbResumenGlobal.Controls.Add(this.txtFacturacionTotal);
             this.gbResumenGlobal.Controls.Add(this.label6);
             this.gbResumenGlobal.Controls.Add(this.txtTotalConsulta);
             this.gbResumenGlobal.Controls.Add(this.label5);
@@ -338,7 +338,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTotalConsulta;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFacturacionTotal;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
