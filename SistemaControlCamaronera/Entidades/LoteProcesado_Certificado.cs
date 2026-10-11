@@ -13,8 +13,10 @@ namespace SistemaControlCamaronera.Entidades {
             this.codigoCertificado = codigoCertificado;
         }
 
+        // Implementamos la propiedad CodigoCertificado, que retorna el codigo del certificado del lote procesado certificado
         public string CodigoCertificado { get => codigoCertificado; set => codigoCertificado = value; }
 
+        // Implementamos el metodo abstracto CalcularLiquidacion, que retorna el valor de la liquidacion del lote procesado certificado, que es igual al valor de la liquidacion del lote procesado mas un 15% adicional
         public override decimal CalcularLiquidacion {
             get {
                 decimal subtotalBase = (decimal)base.CalcularLiquidacion;
@@ -23,6 +25,7 @@ namespace SistemaControlCamaronera.Entidades {
             }
         }
 
+        // Implementamos el metodo Imprimir, que retorna un string con los datos del lote procesado certificado, incluyendo el codigo del certificado
         public override string Imprimir() {
             return base.Imprimir() + $"Codigo Certificado: {CodigoCertificado}";
         }

@@ -19,7 +19,6 @@ namespace SistemaControlCamaronera.Entidades {
 
         //Se calcula el peso neto útil de colas eliminando el cefalotórax.
         //La libra útil recibe un sobreprecio compensatorio del 30 % sobre el precio base:
-
         public override decimal CalcularLiquidacion {
             get {
                 double librasCola = PesoLibras * factorRendimiento;
@@ -28,6 +27,7 @@ namespace SistemaControlCamaronera.Entidades {
             }
         }
 
+        // Implementamos el metodo Imprimir, que retorna un string con los datos del lote de colas, incluyendo el factor de rendimiento
         public override string Imprimir() {
             return base.Imprimir() + $"Factor Rendimiento: {factorRendimiento}";
         }

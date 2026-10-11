@@ -33,10 +33,10 @@ namespace SistemaControlCamaronera.Entidades {
         public decimal PrecioBase { get => precioBase; set => precioBase = value; }
         public string Tipo { get => tipo; set => tipo = value; }
 
-        // creamos el metodo abstracto y su getter
-        public abstract Decimal CalcularLiquidacion { get; }  
+        // creamos el metodo abstracto pedido por la clase padre y su getter
+        public abstract Decimal CalcularLiquidacion { get; }
 
-
+        // creamos el metodo BonoGramaje, que retorna un bono de 150.00 si el gramaje promedio es mayor o igual a 20.0, sino retorna 0.00
         public decimal BonoGramaje() {
 
             if (gramajePromedio >= 20.0) {
@@ -47,6 +47,7 @@ namespace SistemaControlCamaronera.Entidades {
             }
         }
 
+        // metodo para imprimir los datos del lote de camaron, que retorna un string con los datos del lote
         public virtual String Imprimir() {
             return $"Codigo Lote: {CodigoLote} {Environment.NewLine} " +
                 $"Piscina: {Piscina} {Environment.NewLine} " +

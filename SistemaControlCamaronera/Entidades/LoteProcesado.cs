@@ -17,6 +17,7 @@ namespace SistemaControlCamaronera.Entidades {
             set => tarifaProceso = value; 
         }
 
+        // Implementamos el metodo abstracto CalcularLiquidacion, que retorna el valor de la liquidacion del lote procesado, que es igual al peso en libras multiplicado por el precio base, mas el costo de proceso (peso en libras multiplicado por la tarifa de proceso), mas el bono de gramaje
         public override decimal CalcularLiquidacion {
             get {
                 double costoProcesado = PesoLibras * (tarifaProceso / 100);
