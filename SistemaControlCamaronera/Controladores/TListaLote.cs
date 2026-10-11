@@ -69,16 +69,16 @@ namespace SistemaControlCamaronera.Controladores {
         // Consulta para obtener la recaudacion total de todos los lotes por tipo, usando LINQ
         public static decimal RecaudacionPorTipoLINQ(string tipo) {
 
-            var consulta = listaLotes.Where(l => l.Tipo.Equals(tipo, StringComparison.OrdinalIgnoreCase)).Sum(l => l.CalcularLiquidacion);
+            var consulta = listaLotes.Where(c => c.Tipo.Equals(tipo, StringComparison.OrdinalIgnoreCase)).Sum(c => c.CalcularLiquidacion);
 
             return consulta;
         }
 
         // Consulta para obtener la recaudacion total de todos los lotes por tipo, usando LINQ con query syntax
-        public static decimal RecaudacionPorTipoL(string tipo) {
-            var consulta = from l in listaLotes
-                           where l.Tipo.Equals(tipo, StringComparison.OrdinalIgnoreCase)
-                           select l.CalcularLiquidacion;
+        public static decimal RecaudacionPorTipoLQuery(string tipo) {
+            var consulta = from c in listaLotes
+                           where c.Tipo.Equals(tipo, StringComparison.OrdinalIgnoreCase)
+                           select c.CalcularLiquidacion;
 
             return consulta.Sum();
         }
@@ -88,13 +88,13 @@ namespace SistemaControlCamaronera.Controladores {
         public IEnumerable<ConsolidadoPorTipo> ConsolidadoPorTipo() {
 
             // usamos groupBy para agrupar los lotes por tipo, y luego usamos select para proyectar cada grupo en un objeto ConsolidadoPorTipo
-            var consulta = listaLotes.GroupBy(l => l.Tipo).Select(
+            var consulta = listaLotes.GroupBy(c => c.Tipo).Select(
                 group => new ConsolidadoPorTipo { // se instancia un objeto ConsolidadoPorTipo por cada grupo de lotes, y se asignan las propiedades del objeto con los valores calculados.
                     Tipo = group.Key,
                     Cantidad = group.Count(),
-                    PesoTotal = group.Sum(l => l.PesoLibras),
-                    PromedioGramaje = group.Average(l => l.GramajePromedio),
-                    TotalLiquidado  = group.Sum(l => l.CalcularLiquidacion)
+                    PesoTotal = group.Sum(c => c.PesoLibras),
+                    PromedioGramaje = group.Average(c => c.GramajePromedio),
+                    TotalLiquidado  = group.Sum(c => c.CalcularLiquidacion)
 
                 });
             
@@ -103,13 +103,30 @@ namespace SistemaControlCamaronera.Controladores {
 
         // Consulta para obtener los lotes que tienen bono de gramaje mayor o igual a 20
         public IEnumerable<LoteCamaron> LotesConBono() {
-            var consulta = listaLotes.Where(l => l.BonoGramaje() >= 20);
+            var consulta = listaLotes.Where(c => c.BonoGramaje() >= 20);
             return consulta;
         }
 
-        // usamos OrderByDescending para ordenar de mayor a menor y take(3) para tomar los primeros 3 mejores lotes rentables
-        public IEnumerable<LoteCamaron> MejoresTresRentables() {
+        // OrderByDescending: Mayor A Menor
+        // OrderBy: Menor A Mayor
+        // Take: Toma los primeros n elementos de la lista
+
+        // usamos OrderByDescending para ordenar de mayor a menor y take(3) para tomar los primeros 3 mejores lotes rentableses wher
+        public IEnumerable<LoteCamaron> Top3Rentables() {
+            // take(3) toma los primeros 3 elementos de la lista Ordenada despues de OrderByDescending
             var consulta = listaLotes.OrderByDescending(l => l.CalcularLiquidacion).Take(3);
+            return consulta;
+        }
+
+        // Consulta para obtener los lotes que tienen defecto de cabeza mayor a 3.0, usando OfType para filtrar solo los lotes de tipo LoteEntero
+        public IEnumerable<LoteCamaron> LotesPenalizados() {
+            var consulta = listaLotes.OfType<LoteEntero>().Where(c => c.DefectoCabeza > 3.0);
+            return consulta;
+        }
+
+        // Consulta para obtener el lote con mayor liquidacion
+        public LoteCamaron ObtenerMejorLote() {
+            var consulta = listaLotes.OrderByDescending(c => c.CalcularLiquidacion).FirstOrDefault(); // obtenemos el lote con mayor liquidacion
             return consulta;
         }
     }
