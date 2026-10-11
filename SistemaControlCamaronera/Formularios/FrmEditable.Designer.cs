@@ -45,10 +45,10 @@
             this.txtPrevisualizacionTotal = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.gpTipo = new System.Windows.Forms.GroupBox();
-            this.lblParametro1 = new System.Windows.Forms.Label();
-            this.txtParametro1 = new System.Windows.Forms.TextBox();
             this.lblParametro2 = new System.Windows.Forms.Label();
             this.txtParametro2 = new System.Windows.Forms.TextBox();
+            this.lblParametro1 = new System.Windows.Forms.Label();
+            this.txtParametro1 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAgregarLote = new System.Windows.Forms.Button();
@@ -96,7 +96,6 @@
             this.txtPiscina.Name = "txtPiscina";
             this.txtPiscina.Size = new System.Drawing.Size(252, 29);
             this.txtPiscina.TabIndex = 20;
-            this.txtPiscina.TextChanged += new System.EventHandler(this.txtPiscina_TextChanged);
             // 
             // txtPrecioBase
             // 
@@ -113,7 +112,6 @@
             this.txtGramajePromedio.Name = "txtGramajePromedio";
             this.txtGramajePromedio.Size = new System.Drawing.Size(253, 29);
             this.txtGramajePromedio.TabIndex = 21;
-            this.txtGramajePromedio.TextChanged += new System.EventHandler(this.txtGramajePromedio_TextChanged);
             // 
             // label1
             // 
@@ -138,6 +136,7 @@
             this.cboTipos.Name = "cboTipos";
             this.cboTipos.Size = new System.Drawing.Size(253, 32);
             this.cboTipos.TabIndex = 23;
+            this.cboTipos.SelectedIndexChanged += new System.EventHandler(this.cboTipos_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -178,7 +177,6 @@
             this.lblPiscina.Size = new System.Drawing.Size(108, 28);
             this.lblPiscina.TabIndex = 27;
             this.lblPiscina.Text = "Piscina:";
-            this.lblPiscina.Click += new System.EventHandler(this.lblPiscina_Click);
             // 
             // label7
             // 
@@ -189,7 +187,6 @@
             this.label7.Size = new System.Drawing.Size(216, 28);
             this.label7.TabIndex = 28;
             this.label7.Text = "Gramaje Promedio:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -267,24 +264,6 @@
             this.gpTipo.TabStop = false;
             this.gpTipo.Text = "Producto";
             // 
-            // lblParametro1
-            // 
-            this.lblParametro1.AutoSize = true;
-            this.lblParametro1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13.74545F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblParametro1.Location = new System.Drawing.Point(99, 36);
-            this.lblParametro1.Name = "lblParametro1";
-            this.lblParametro1.Size = new System.Drawing.Size(84, 28);
-            this.lblParametro1.TabIndex = 40;
-            this.lblParametro1.Text = "Tipo 1";
-            // 
-            // txtParametro1
-            // 
-            this.txtParametro1.Location = new System.Drawing.Point(22, 68);
-            this.txtParametro1.Multiline = true;
-            this.txtParametro1.Name = "txtParametro1";
-            this.txtParametro1.Size = new System.Drawing.Size(252, 29);
-            this.txtParametro1.TabIndex = 39;
-            // 
             // lblParametro2
             // 
             this.lblParametro2.AutoSize = true;
@@ -302,6 +281,24 @@
             this.txtParametro2.Name = "txtParametro2";
             this.txtParametro2.Size = new System.Drawing.Size(252, 29);
             this.txtParametro2.TabIndex = 41;
+            // 
+            // lblParametro1
+            // 
+            this.lblParametro1.AutoSize = true;
+            this.lblParametro1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13.74545F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblParametro1.Location = new System.Drawing.Point(99, 36);
+            this.lblParametro1.Name = "lblParametro1";
+            this.lblParametro1.Size = new System.Drawing.Size(84, 28);
+            this.lblParametro1.TabIndex = 40;
+            this.lblParametro1.Text = "Tipo 1";
+            // 
+            // txtParametro1
+            // 
+            this.txtParametro1.Location = new System.Drawing.Point(22, 68);
+            this.txtParametro1.Multiline = true;
+            this.txtParametro1.Name = "txtParametro1";
+            this.txtParametro1.Size = new System.Drawing.Size(252, 29);
+            this.txtParametro1.TabIndex = 39;
             // 
             // label11
             // 
