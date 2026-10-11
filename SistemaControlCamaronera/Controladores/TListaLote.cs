@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SistemaControlCamaronera.Entidades; // importo la clase abstracta LoteCamaron
+using SistemaControlCamaronera.Entidades; // importo la clase abstracta LoteCamaron, ConsolidadoPorTipo
+
 
 namespace SistemaControlCamaronera.Controladores {
     public class TListaLote {
@@ -71,5 +72,25 @@ namespace SistemaControlCamaronera.Controladores {
 
             return consulta.Sum();
         }
+
+        public IEnumerable<ConsolidadoPorTipo> ConsolidadoPorTipo() {
+            var consulta = listaLotes.GroupBy(l => l.Tipo).Select(
+                group => new ConsolidadoPorTipo {
+                    Tipo = group.Key,
+                    Cantidad = group.Count(),
+                    PesoTotal = group.Sum(l => l.PesoLibras),
+                    PromedioGramaje = group.Average(l => l.GramajePromedio),
+                    TotalLiquidado  = group.Sum(l => l.CalcularLiquidacion)
+
+                });
+            
+            return consulta;
+        }
+
+        public IEnumerable<LoteCamaron> LotesConBono() {
+            var consulta = listaLotes.Where(l => l.BonoGramaje() >= 20);
+            return consulta;
+        }
     }
+
 }
