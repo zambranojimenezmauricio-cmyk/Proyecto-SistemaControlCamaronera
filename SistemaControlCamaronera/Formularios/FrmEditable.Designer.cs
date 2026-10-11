@@ -273,6 +273,7 @@
             this.lblParametro2.Size = new System.Drawing.Size(84, 28);
             this.lblParametro2.TabIndex = 42;
             this.lblParametro2.Text = "Tipo 2";
+            this.lblParametro2.Click += new System.EventHandler(this.lblParametro2_Click);
             // 
             // txtParametro2
             // 

@@ -31,7 +31,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtLiquidacionTotal = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnAgregarLote = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -117,15 +117,15 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Liquidacion Total:";
             // 
-            // btnAgregarLote
+            // btnGuardar
             // 
-            this.btnAgregarLote.Font = new System.Drawing.Font("Cascadia Code", 13.74545F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarLote.Location = new System.Drawing.Point(923, 194);
-            this.btnAgregarLote.Name = "btnAgregarLote";
-            this.btnAgregarLote.Size = new System.Drawing.Size(216, 42);
-            this.btnAgregarLote.TabIndex = 9;
-            this.btnAgregarLote.Text = "+ Nuevo Lote";
-            this.btnAgregarLote.UseVisualStyleBackColor = true;
+            this.btnGuardar.Font = new System.Drawing.Font("Cascadia Code", 13.74545F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(923, 194);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(216, 42);
+            this.btnGuardar.TabIndex = 9;
+            this.btnGuardar.Text = "+ Nuevo Lote";
+            this.btnGuardar.UseVisualStyleBackColor = true;
             // 
             // btnModificar
             // 
@@ -222,7 +222,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnAgregarLote);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtLiquidacionTotal);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPesoTotal);
@@ -249,7 +249,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtLiquidacionTotal;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnAgregarLote;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnBuscar;
